@@ -1,0 +1,63 @@
+# Settings file for anonymiser.py
+# This is an example set of changes
+
+# This will be applied to all tables
+general
+	house_no :numbers :1 :500
+	first_name :first_name
+	last_name :last_name
+	middle_name :short :3
+	remark :static_string :An important remark
+	comment :static_string :An important comment
+	street :street_name
+	name_search :search_name
+end
+
+# This will be applied to the 3 specified tables
+table :contact_table :contact_info_table :person_contact_info
+	value :cond_replace :GSM,TEL,EMAIL :cell_phone_no,phone_no,email
+end
+
+# Example of replacement of special codes
+# Note: ":set_replace" will remember all the replaced codes to make sure it can't create duplicates
+table :tbl_special_codes
+	insz_no :insz
+	company_number :company_no
+	registration_number :set_replace :registration_number
+end
+
+# Example of personal info
+table :person_table
+	insz_no :insz
+	last_name	:last_name
+	first_name	:first_name
+	middle_name :short :3
+	email :email
+	cell_phone :cell_phone_no
+	regular_phone :phone_no
+	street_name :street_name
+	house_no :numbers :1 :500
+	nis_code :niscode
+	postal_code :static_string :1000
+	address :static_string :Merholaan 1B, 2981 Zoersel-Parwijs
+	bank_account_number :iban
+	bic_code :static_string :GKCCBEBB
+end
+
+# This will replace a company name with a comic book company
+table :tbl_company_name
+	c_name :company
+end
+
+# This will empty certain tables
+truncate :table_that_needs_to_be_emptied
+truncate :other_table
+
+# This will conditially remove the table row if the specified field contains the specified string
+table :table_remove_some_rows 
+	selection_row :cond_remove :NEEDS_REMOVED
+end
+
+table :table_secret_security 
+	security_role :cond_remove :super_admin
+end
