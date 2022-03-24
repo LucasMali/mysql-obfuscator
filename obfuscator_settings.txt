@@ -1,4 +1,4 @@
-# Settings file for anonymiser.py
+# Settings file for mysqlobfuscator.py
 # This is an example set of changes
 
 # This will be applied to all tables
@@ -53,11 +53,16 @@ end
 truncate :table_that_needs_to_be_emptied
 truncate :other_table
 
-# This will conditially remove the table row if the specified field contains the specified string
+# This will conditionally remove the table row if the specified field contains the specified string
 table :table_remove_some_rows 
 	selection_row :cond_remove :NEEDS_REMOVED
 end
 
 table :table_secret_security 
 	security_role :cond_remove :super_admin
+end
+
+# This is an example of needing an international phone number, not all numbers are included
+table :customer_phones
+	number	:inter_phone_no
 end

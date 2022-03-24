@@ -6,12 +6,13 @@ It will obfuscate the file, not the database, which means it can be done after a
 Currently the script uses hard-coded comic book character names for obfuscation of names (first name, last name, street name, company name, etc.)
 
 ## Requirements
-* Python 2.7 or higher (Note: If Python 3 or higher, print statements need to be changed)
-* Installed python libs: random
-
+* Python 3.0+
 
 ## Use of script
-python anonymiser.py [-i input_filename] [-o output_filename] [-s settings_filename]
+python obfuscator.py [-i input_filename] [-o output_filename] [-s settings_filename]
+
+Example of pipe delimiter usage:
+> mysqldump -h [host] -u [user] -p[password] [DATABASE_NAME] [TABLE_NAME] | python obfuscator.py > [filename].sql
 
 The SQL script must contain either a CREATE statement for tables that need to be altered
 or the table columns must be added after the INSERT statements.

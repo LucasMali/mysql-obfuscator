@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: mysqlobfuscator
+Version: 1.1.0
+Summary: This python script will obfuscate / anonymise your database dump.
+Home-page: https://github.com/LucasMali/mysql-obfuscator
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Integration
+Classifier: Intended Audience :: Science/Data
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+
+UNKNOWN
+

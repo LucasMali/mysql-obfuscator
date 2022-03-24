@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+mysqlobfuscator.egg-info/PKG-INFO
+mysqlobfuscator.egg-info/SOURCES.txt
+mysqlobfuscator.egg-info/dependency_links.txt
+mysqlobfuscator.egg-info/top_level.txt
